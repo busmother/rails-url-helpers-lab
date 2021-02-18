@@ -9,16 +9,8 @@ resources :students, only: [:index, :show]
 # toggle their active attribute between true and false. 
 # (This is just the activate route, and not a actual view.)
 
-# get '/student/:id/activate' do
-#   @student = Student.find(params[:id])
-#   if @student.active
-#     @student.active = false
-#   else
-#     @student.active = true
-#   end
-#   redirect "/student/#{@student.id}"
-# end
+#we need to define a route helper and use as: 'activate_student_path'
 
-get '/students/:id/activate', to: 'students#activate'
+get '/students/:id/activate', to: 'students#activate', as: :activate_student
 
 end
